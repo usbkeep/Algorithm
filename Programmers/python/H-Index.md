@@ -68,6 +68,7 @@ H-Index 값을 구할 때
  ex) 6 - 3 <= 3   True
 
 ​
+아래와 같이 나타냈을 때 좀 더 이해가 쉬웠다.
 <pre><code>
     for index in range(length):
 
