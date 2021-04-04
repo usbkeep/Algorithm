@@ -1,5 +1,6 @@
 """
 테스트 중
+
 """
 adj = [[] for i in range(300005)]
 INF = 0x7fffffff7fffffff
@@ -29,10 +30,3 @@ def solution(sales, links):
         adj[x[0]].append(x[1])
     dfs(1)
     return min(d[1])
-
-
-if __name__ == '__main__':
-    sales = [14, 17, 15, 18, 19, 14, 13, 16, 28, 17]
-    links = [[10, 8], [1, 9], [9, 7], [5, 4], [1, 5], [5, 10], [10, 6], [1, 3], [10, 2]]
-    print(solution(sales,links),'\n---------')
-    #print(solution([10, 10, 1, 1],[[3,2], [4,3], [1,4]]))
