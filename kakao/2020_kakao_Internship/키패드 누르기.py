@@ -1,4 +1,14 @@
-# https://programmers.co.kr/learn/courses/30/lessons/67256?language=python3
+# [카카오 인턴] 키패드 누르기
+# https://programmers.co.kr/learn/courses/30/lessons/67256
+
+"""
+    입출력 예)
+        numbers = [1, 3, 4, 5, 8, 2, 1, 4, 5, 9, 5]
+        hand = "right"
+        result = "LRLLLRLLRRL"
+
+        print(solution(numbers,hand))
+"""
 
 right_set = {3, 6, 9}
 left_set = {1, 4, 7}

@@ -1,30 +1,34 @@
+# 신규 아이디 추천
+# https://programmers.co.kr/learn/courses/30/lessons/72410
+
 """
 new_id는 길이 1 이상 1,000 이하인 문자열입니다.
 new_id는 알파벳 대문자, 알파벳 소문자, 숫자, 특수문자로 구성되어 있습니다.
 new_id에 나타날 수 있는 특수문자는 -_.~!@#$%^&*()=+[{]}:?,<>/ 로 한정됩니다.
+
+입출력 예)
+        new_id = "...!@BaT#*..y.abcdefghijklm"
+        result = "bat.y.abcdefghi"
+
+        print(solution(new_id))
 """
+
 
 import re
 
 
 def solution(new_id):
-    answer = ''
 
     # 1단계 new_id의 모든 대문자를 대응되는 소문자로 치환합니다.
     step1 = new_id.lower()
 
     
     # 2단계 new_id에서 알파벳 소문자, 숫자, 빼기(-), 밑줄(_), 마침표(.)를 제외한 모든 문자를 제거합니다.
-    step2 = re.sub('[^a-z\d\-\_\.]+','',step1)
-    # for c in new_id:
-    #     if c.isalpha() or c.isdigit() or c in ['-', '_', '.']:
-    #         answer += c
+    step2 = re.sub('[^a-z0-9\-_.]','',step1)
 
     
     # 3단계 new_id에서 마침표(.)가 2번 이상 연속된 부분을 하나의 마침표(.)로 치환합니다.
-    step3 = re.sub('[\.]+','.',step2)
-    # while '..' in answer:
-    #     answer = answer.replace('..', '.')
+    step3 = re.sub('\.+','.',step2)
 
     
     # 4단계 new_id에서 마침표(.)가 처음이나 끝에 위치한다면 제거합니다.
@@ -35,10 +39,6 @@ def solution(new_id):
             step4 = step4[1:]
         else:
             step4 = step4[:len(step4)-1]
-    # if answer[0] == '.':
-    #     answer = answer[1:] if len(answer) > 1 else '.'
-    # if answer[-1] == '.':
-    #     answer = answer[:-1]
 
             
     # 5단계 new_id가 빈 문자열이라면, new_id에 "a"를 대입합니다.
@@ -52,14 +52,15 @@ def solution(new_id):
     # 만약 제거 후 마침표(.)가 new_id의 끝에 위치한다면 끝에 위치한 마침표(.) 문자를 제거합니다.
     if len(step5) > 15:
         step6 = step5[:15]
-        if answer[-1] == '.':
-            step6 = step5[:-1]
+        if step6[-1] == '.':
+            step6 = step6[:-1]
     else:
         step6 = step5
 
+
     # 7단계 new_id의 길이가 2자 이하라면, new_id의 마지막 문자를 new_id의 길이가 3이 될 때까지 반복해서 끝에 붙입니다.
     step7 = step6
-    while len(step7) < 3:
+    while len(step7) <= 2:
         step7 += step7[-1]
 
     answer = step7

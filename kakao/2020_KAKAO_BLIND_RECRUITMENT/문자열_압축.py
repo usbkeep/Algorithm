@@ -1,6 +1,18 @@
+# 문자열 압축
+# https://programmers.co.kr/learn/courses/30/lessons/60057
+
+"""
+    입출력 예)
+        S = "aabbaccc"
+        result = 7
+
+        print(solution(S))
+"""
+
+
 def solution(s):
 
-    if (s_len := len(s)) <= 3:
+    if (s_len := len(s)) < 3:
         return s_len
 
     min_len = s_len
@@ -28,3 +40,6 @@ def solution(s):
             min_len = test_len
 
     return min_len
+
+
+print(solution("aabbaccc"))

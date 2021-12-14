@@ -1,5 +1,7 @@
+# 매출 하락 최소화
+# https://programmers.co.kr/learn/courses/30/lessons/72416
 """
-테스트 중
+    테스트 중
 
 """
 adj = [[] for i in range(300005)]
