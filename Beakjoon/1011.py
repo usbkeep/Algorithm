@@ -15,7 +15,7 @@ import sys
 import math
 
 T = int(sys.stdin.readline().strip())
-count_list = []
+
 for _ in range(T):
     x, y = map(int, sys.stdin.readline().split())
     distance = y-x
@@ -23,11 +23,10 @@ for _ in range(T):
 
     if max_move > (m:= int(max_move)):
         if max_move - m > 0.5:
-            count_list.append((m*2)+1)
+            count = (m*2)+1
         else:
-            count_list.append(m*2)
+            count = m*2
     else:
-        count_list.append((m*2)-1)
-
-for count in count_list:
+        count =(m*2)-1
     print(count)
+
