@@ -1,5 +1,7 @@
 # test #
 /test/*
+/_test/*
+/_form/*
 
 ### Pycharm IDEA ###
 /venv/*
