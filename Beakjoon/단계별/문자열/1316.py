@@ -9,25 +9,22 @@ import sys
 import collections
 
 def is_group(word):
-    # 97 ~ 122, a ~ z
-    arr = [0 for _ in range(ord('z')-ord('a')+1)]
+    wordSet = set(word)
     deque = collections.deque(word)
 
     current = deque.popleft()
     while deque:
-        index = ord(current) - ord('a')
-        if arr[index]:
-            return False
-
         temp = deque.popleft()
-        if current != temp:
-            arr[index] = True
+        if current == temp:
+            pass
+        else:
+            if current not in wordSet:
+                return False
+            wordSet.remove(current)
             current = temp
 
-    index = ord(current) - ord('a')
-    if arr[index]:
+    if current not in wordSet:
         return False
-
 
     return True
 
