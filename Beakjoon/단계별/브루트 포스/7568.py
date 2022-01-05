@@ -40,23 +40,7 @@ for p1 in people:
 
 
 """ 
-# NlogN으로 풀고자 했으나 실패, n^2. 이후에 다시 확인해보자.
-# +브루트 포스 << 
-Test Case
-3
-90 180
-100 190
-110 200
----
-correct = 3 2 1
-============
-3
-20 110
-16 100
-12 90
----
-correct = 1 2 3
-============
+# Test Case 1 :
 6
 8 9
 10 8
@@ -64,14 +48,13 @@ correct = 1 2 3
 4 5
 2 54
 39 4
----------
-correct = 1 1 1 3 1 1, actual = 1 1 1 3 1 1
-============
+correct : actual = "1 1 1 3 1 1", expected = "1 1 1 3 1 1"
+
+# Test Case 2 :
 4
 10 20
 10 20
 20 30
 20 20
--answer-
-correct = 2 2 1 1, actual= 2 2 1 1
+correct : actual = "2 2 1 1", expected = "2 2 1 1"
 """
