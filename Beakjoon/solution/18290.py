@@ -25,6 +25,8 @@ def dfs(x, y, depth, S):
         global answer
         answer = max(S, answer)
         return
+    elif answer > S + sum(maxValues[-K+depth:]):  # 가지치기
+        return
 
     for i in range(x, N):
         for j in range(y if i == x else 0, M):
@@ -52,6 +54,10 @@ N, M, K = map(int, sys.stdin.readline().split())
 gridPlate = [list(map(int, sys.stdin.readline().split())) for _ in range(N)]
 visited = [[False] * M for _ in range(N)]
 
+maxValues = []
+for line in gridPlate:
+    maxValues.extend(sorted(line)[-K:])
+maxValues = sorted(maxValues)[-K:]
 
 answer = MIN_NUM * K
 dfs(0,0,0,0)
