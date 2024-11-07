@@ -15,7 +15,7 @@ import sys
 import collections
 
 
-graph = dict()
+Group = dict()
 
 # DFS
 def DFS(root):
@@ -26,8 +26,8 @@ def DFS(root):
         node = stack.pop()
         if node not in visited:
             visited.append(node)
-            if graph.get(node):
-                stack.extend(sorted(list(graph[node]),reverse=True))
+            if Group.get(node):
+                stack.extend(sorted(list(Group[node]), reverse=True))
 
     return visited
 
@@ -41,8 +41,8 @@ def BFS(root):
         node = que.popleft()
         if node not in visited:
             visited.append(node)
-            if graph.get(node):
-                que.extend(sorted(list(graph[node])))
+            if Group.get(node):
+                que.extend(sorted(list(Group[node])))
 
     return visited
 
@@ -58,14 +58,14 @@ N, M, V = map(int,sys.stdin.readline().split())
 
 for i in range(M):
     vertex, edge = map(int,sys.stdin.readline().split())
-    if graph.get(vertex):
-        graph[vertex].add(edge)
+    if Group.get(vertex):
+        Group[vertex].add(edge)
     else:
-        graph[vertex] = {edge}
-    if graph.get(edge):
-        graph[edge].add(vertex)
+        Group[vertex] = {edge}
+    if Group.get(edge):
+        Group[edge].add(vertex)
     else:
-        graph[edge] = {vertex}
+        Group[edge] = {vertex}
 
 
 print_visited(DFS(V))

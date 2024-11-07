@@ -15,31 +15,34 @@ def DFS(graph, start):
         node = stack.pop()
         if node not in visited:
             visited.append(node)
-            stack.extend(graph[node])
-
+            if graph.get(node) is not None:
+                stack.extend(graph[node])
     return visited
 
 
 computer_count = int(sys.stdin.readline().strip())
 edge_count = int(sys.stdin.readline().strip())
 
-Group = dict()
+graph = dict()
 
 
 #init graph
 for _ in range(edge_count):
-    com1, com2 = map(int, sys.stdin.readline().split())
+    com_info = sys.stdin.readline().split()
 
-    if Group.get(com1):
-        Group[com1].append(com2)
+    if len(com_info) == 2:
+        com1, com2 = com_info
+        if graph.get(com1):
+            graph[com1].append(com2)
+        else:
+            graph[com1] = [com2]
+
+        if graph.get(com2):
+            graph[com2].append(com1)
+        else:
+            graph[com2] = [com1]
     else:
-        Group[com1] = [com2]
+        graph[com_info] = None
 
-    if Group.get(com2):
-        Group[com2].append(com1)
-    else:
-        Group[com2] = [com1]
-
-result = DFS(Group, 1)
-
+result = DFS(graph, '1')
 print(len(result)-1)

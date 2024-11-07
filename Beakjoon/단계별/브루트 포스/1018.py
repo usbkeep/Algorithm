@@ -21,23 +21,23 @@ def countRepaints(chessBoard, paint):  # count the number of reapints
 def cutChessBoard(x, y):  # cut the board to size 8*8
     for i in range(8):
         for j in range(8):
-            chessBoard[i][j] = board[x + i][y + j]
+            chessBoard[i][j] = Board[x + i][y + j]
 
 
 # main
 N, M = map(int, sys.stdin.readline().split())
 
-board = [None for _ in range(N)]
+Board = [None for _ in range(N)]
 chessBoard = [[None for _ in range(8)] for _ in range(8)]
 
 for i in range(N):
     line = sys.stdin.readline().strip()
-    board[i] = line
+    Board[i] = line
 
 colorArr = ['W', 'B']
 
 if N == M==8:
-    result = min(countRepaints(board, colorArr[0]), countRepaints(board, colorArr[1]))
+    result = min(countRepaints(Board, colorArr[0]), countRepaints(Board, colorArr[1]))
 else:
     result = N * M
     for i in range(N-7):

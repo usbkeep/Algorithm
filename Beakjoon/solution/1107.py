@@ -35,14 +35,14 @@ print(solution(N, brokenButton))
 
 
 # - Test -
-def solutionTest():
-    # Test Case
-    targetChannels = 5457, 100, 500000, 100, 14124, 1, 80000,
-    brokenButton = {6,7,8},{0,1,2,3,4}, {0,2,3,4,6,7,8,9}, {1,0,5}, {0}, {1,2,3,4,5,6,7,8,9}, {8,9},
-    results = 6, 0, 11117, 0, 5, 2, 2228,
-
-    for targetChannel, brokenSet, result in zip(targetChannels, brokenButton, results):
-        actual = solution(targetChannel, brokenSet)
-        expected = result
-        print(f"Expected = {expected} Actual = {actual}, {expected == actual}")
+# def solutionTest():
+#     # Test Case
+#     targetChannels = 5457, 100, 500000, 100, 14124, 1, 80000,
+#     brokenButton = {6,7,8},{0,1,2,3,4}, {0,2,3,4,6,7,8,9}, {1,0,5}, {0}, {1,2,3,4,5,6,7,8,9}, {8,9},
+#     results = 6, 0, 11117, 0, 5, 2, 2228,
+#
+#     for targetChannel, brokenSet, result in zip(targetChannels, brokenButton, results):
+#         actual = solution(targetChannel, brokenSet)
+#         expected = result
+#         print(f"Expected = {expected} Actual = {actual}, {expected == actual}")
 # solutionTest()

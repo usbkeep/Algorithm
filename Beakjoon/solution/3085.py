@@ -69,8 +69,8 @@ def solution(board):
 
 # main
 N = int(sys.stdin.readline())
-board = [[] for _ in range(N)]
+Board = [[] for _ in range(N)]
 for i in range(N):
-    board[i] = list(sys.stdin.readline().strip())
+    Board[i] = list(sys.stdin.readline().strip())
 
-print(solution(board))
+print(solution(Board))
