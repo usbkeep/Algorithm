@@ -3,6 +3,11 @@
 /_test/*
 /_form/*
 
+# study #
+/study/*
+/_study/*
+
+
 ### Pycharm IDEA ###
 /venv/*
 /.idea/*
