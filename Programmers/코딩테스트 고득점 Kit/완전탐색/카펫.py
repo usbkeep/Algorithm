@@ -9,9 +9,9 @@
 """
 
 def solution(brown, yellow):
-    for i in range(1, int(yellow**(1/2))+1):
-        if yellow % i == 0:
-            if 2*(i + yellow//i) == brown-4:
+    for i in range(1, int(yellow**(1/2))+1):  # 약수를 구하기위한 루트n
+        if yellow % i == 0: # 약수
+            if 2*(i + yellow//i) == brown-4: 
                 return [yellow//i+2, i+2]
 
 def solutionTest():
