@@ -8,7 +8,16 @@
 /_study/*
 
 
-### Pycharm IDEA ###
+### Pycharm ###
 /venv/*
 /.idea/*
 __pycache__/*
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
